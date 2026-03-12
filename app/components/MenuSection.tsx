@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const menus = [
   {
@@ -6,7 +7,7 @@ const menus = [
     nama: "Paket 1",
     harga: "Rp 25.000",
     deskripsi: "Nasi putih, daging srundeng, kering tempe, sambal goreng kreni, dadar telur, sambal, timun, dan kering kentang",
-    image: "/paket1.png" // Sesuaikan nama file di folder public
+    image: "/paket1.png"
   },
   {
     id: 2,
@@ -59,18 +60,22 @@ export default function MenuSection() {
               {item.deskripsi}
             </p>
 
-            {/* Tombol */}
-            <button className="w-full bg-[#5B4E64] text-white py-3 rounded-xl font-serif text-xl font-medium hover:bg-[#483d50] transition shadow-md">
-              Lanjut Pemesanan
-            </button>
+            {/* Tombol Lanjut Pemesanan - Langsung ke dynamic route [id] */}
+            <Link href={`/paket-menu/${item.id}`} className="w-full">
+              <button className="w-full bg-[#5B4E64] text-white py-3 rounded-xl font-serif text-xl font-medium hover:bg-[#43394a] transition shadow-md active:scale-95">
+                Lanjut Pemesanan
+              </button>
+            </Link>
           </div>
         ))}
       </div>
 
-      {/* Tombol Lihat Selengkapnya */}
-      <button className="w-full bg-[#B3A9A9] text-stone-900 py-4 rounded-xl font-serif text-2xl font-medium hover:bg-[#a19797] transition border border-stone-400 shadow-sm">
-        Lihat Selengkapnya
-      </button>
+      {/* Tombol Lihat Selengkapnya - Mengarah ke halaman daftar paket menu lengkap */}
+      <Link href="/paket-menu" className="w-full">
+        <button className="w-full bg-[#B3A9A9] text-stone-900 py-4 rounded-xl font-serif text-2xl font-medium hover:bg-[#a19797] transition border border-stone-400 shadow-sm active:scale-[0.99]">
+          Lihat Selengkapnya
+        </button>
+      </Link>
     </section>
   );
 }
