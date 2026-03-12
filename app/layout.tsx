@@ -15,6 +15,11 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Catering Bu Ipuk Nartoyo",
   description: "Sajian Autentik Rasa Istimewa",
+  icons: {
+    icon: "/logo.png", // Sesuaikan dengan nama file di folder public
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
