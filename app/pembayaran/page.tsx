@@ -109,23 +109,28 @@ export default function KonfirmasiPembayaran() {
       <Footer />
 
       {/* MODAL POPUP (Logic Sesuai Gambar Referensi) */}
+      {/* MODAL POPUP */}
       {isSuccess && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 animate-fadeIn">
-          <div className="bg-white p-10 rounded-3xl shadow-2xl flex flex-col items-center max-w-sm w-full mx-4 border border-stone-200">
+        /* Pastikan bg-black menggunakan opacity yang pas, misalnya 40% atau 50% */
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-300">
+          
+          {/* Kontainer Putih Popup */}
+          <div className="bg-white p-10 rounded-[2.5rem] shadow-2xl flex flex-col items-center max-w-sm w-full mx-4 border border-stone-100 scale-in-center">
+            
             {/* Icon Checkmark Bulat Hijau */}
-            <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6 border-2 border-green-500">
-              <svg className="w-12 h-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
+            <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6 border-[3px] border-green-500 shadow-sm">
+              <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"></path>
               </svg>
             </div>
             
-            <h2 className="text-xl font-bold text-stone-800 mb-8 text-center">
+            <h2 className="text-2xl font-bold text-stone-800 mb-8 text-center">
               Pembayaran Berhasil
             </h2>
 
             <button 
               onClick={handleClosePopup}
-              className="w-full bg-[#5B4E64] text-white py-2 px-10 rounded-lg font-bold hover:bg-[#43394a] transition-colors"
+              className="w-full bg-[#5B4E64] text-white py-3 px-10 rounded-xl font-bold hover:bg-[#43394a] transition-all active:scale-95 shadow-lg"
             >
               Ok
             </button>

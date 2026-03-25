@@ -1,0 +1,34 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  nama      String
+  email     String   @unique
+  noTelp    String
+  password  String
+  role      String   @default("ADMIN") // Untuk membedakan admin & user biasa
+  createdAt DateTime @default(now())
+}
+
+model PaketMenu {
+  id        Int      @id @default(autoincrement())
+  nama      String
+  harga     Int
+  deskripsi String   @db.Text   // Gunakan String dengan @db.Text
+  image     String
+}
+
+model Artikel {
+  id        Int      @id @default(autoincrement())
+  judul     String
+  tanggal   String
+  image     String
+  isi       String   @db.Text   // Gunakan String dengan @db.Text
+}

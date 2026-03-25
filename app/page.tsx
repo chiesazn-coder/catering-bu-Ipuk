@@ -1,9 +1,10 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import MenuSection from './components/MenuSection';
+import GallerySection from './components/GallerySection'; // Import komponen baru
 import FaqSection from './components/FaqSection';
 import MapsSection from './components/MapsSection';
-import Footer from './components/Footer'; // Import baru
+import Footer from './components/Footer';
 
 export default function Home() {
   return (
@@ -11,9 +12,10 @@ export default function Home() {
       <Navbar />
       <Hero />
       <MenuSection />
+      <GallerySection /> {/* Section Galeri ditambahkan di sini */}
       <FaqSection />
       <MapsSection />
-      <Footer /> {/* Bagian penutup */}
+      <Footer />
     </main>
   );
 }

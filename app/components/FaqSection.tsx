@@ -4,7 +4,7 @@ import { useState } from 'react';
 const faqData = [
   {
     question: "Berapa minimal pemesanan untuk paket catering?",
-    answer: "Minimal pemesanan untuk paket nasi box adalah 20 porsi, sedangkan untuk prasmanan minimal 50 porsi."
+    answer: "Minimal pemesanan untuk paket nasi box 30 porsi, dan untuk prasmanan 100 porsi"
   },
   {
     question: "Apakah catering melayani berbagai jenis acara?",
@@ -12,15 +12,15 @@ const faqData = [
   },
   {
     question: "Bagaimana cara melakukan pemesanan paket catering?",
-    answer: "Anda bisa menekan tombol 'Lanjut Pemesanan' pada menu, lalu akan diarahkan ke WhatsApp kami untuk konfirmasi jadwal dan menu."
+    answer: "Anda bisa menekan 'lanjut pemesanan' pada halaman paket menu"
   },
   {
     question: "Apakah tersedia layanan pengantaran pesanan?",
-    answer: "Tersedia! Kami melayani pengantaran untuk wilayah kota dan sekitarnya dengan biaya ongkir yang disesuaikan jarak."
+    answer: "Tersedia, kami melayani pengantaran karena sudah include dengan makanan."
   },
   {
     question: "Apakah tersedia paket catering untuk acara besar?",
-    answer: "Tentu, untuk acara besar seperti pernikahan tersedia harga khusus dan layanan waiter jika diperlukan."
+    answer: "Tersedia, untuk memenuhi kebutuhan anda."
   }
 ];
 
