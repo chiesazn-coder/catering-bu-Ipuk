@@ -6,12 +6,12 @@ import Footer from '../components/Footer';
 export default function GaleriPage() {
   // Data gambar (silakan ganti path src dengan file asli kamu)
   const galeriImages = [
-    { id: 1, src: '/images/galeri1.jpg', alt: 'Prasmanan Catering' },
-    { id: 2, src: '/images/galeri2.jpg', alt: 'Hampers Besek Biru' },
-    { id: 3, src: '/images/galeri3.jpg', alt: 'Lauk Pauk Catering' },
-    { id: 4, src: '/images/galeri4.jpg', alt: 'Olahan Bakso Balado' },
-    { id: 5, src: '/images/galeri5.jpg', alt: 'Produksi Box Catering' },
-    { id: 6, src: '/images/galeri6.jpg', alt: 'Nasi Kuning Kotak' },
+    { id: 1, src: '/images/galeri1.png', alt: 'Prasmanan Catering' },
+    { id: 2, src: '/images/galeri2.png', alt: 'Hampers Besek Biru' },
+    { id: 3, src: '/images/galeri3.png', alt: 'Lauk Pauk Catering' },
+    { id: 4, src: '/images/galeri4.png', alt: 'Olahan Bakso Balado' },
+    { id: 5, src: '/images/galeri5.png', alt: 'Produksi Box Catering' },
+    { id: 6, src: '/images/galeri6.png', alt: 'Nasi Kuning Kotak' },
   ];
 
   return (

@@ -1,22 +1,19 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
+import { Inika } from "next/font/google"; // Import Inika
 import "./globals.css";
 
-const jakarta = Plus_Jakarta_Sans({ 
+// Konfigurasi font Inika
+const inika = Inika({ 
   subsets: ["latin"], 
-  variable: "--font-jakarta" 
-});
-
-const playfair = Playfair_Display({ 
-  subsets: ["latin"], 
-  variable: "--font-playfair" 
+  weight: ["400", "700"],
+  variable: "--font-inika" 
 });
 
 export const metadata: Metadata = {
   title: "Catering Bu Ipuk Nartoyo",
   description: "Sajian Autentik Rasa Istimewa",
   icons: {
-    icon: "/logo.png", // Sesuaikan dengan nama file di folder public
+    icon: "/logo.png",
     shortcut: "/logo.png",
     apple: "/logo.png",
   },
@@ -29,7 +26,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body className={`${jakarta.variable} ${playfair.variable} font-sans antialiased`}>
+      {/* Pakai variabel inika di sini */}
+      <body className={`${inika.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>
