@@ -31,7 +31,7 @@ export default function KelolaTentangKami() {
               <td className="p-6 border-r border-stone-800 text-center align-top">
                 <div className="relative w-40 h-64 mx-auto border border-stone-300">
                   <Image 
-                    src="/catering-about.jpg" // Ganti dengan path gambar kamu
+                    src="/catering-about.png" // Ganti dengan path gambar kamu
                     alt="Catering Bu Ipuk"
                     fill
                     className="object-cover"

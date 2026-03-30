@@ -6,7 +6,7 @@ export default function KelolaPaketMenu() {
   const menuData = [
     {
       id: 1,
-      src: "/paket-1.jpg", // Ganti dengan path gambar menu kamu
+      src: "/paket1.png", // Ganti dengan path gambar menu kamu
       judul: "Paket 1",
       harga: "Rp25.000",
       deskripsi: "Nasi putih, daging srundeng, kering tempe, sambal goreng kreni, dadar telur, sambal, timun, dan kering kentang",
