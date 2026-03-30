@@ -1,7 +1,7 @@
 "use client";
 
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
 export default function GaleriPage() {
   // Data gambar (silakan ganti path src dengan file asli kamu)
@@ -16,7 +16,6 @@ export default function GaleriPage() {
 
   return (
     <main className="min-h-screen bg-white">
-      <Navbar />
 
       <div className="max-w-7xl mx-auto px-6 py-12 md:py-16 font-serif">
         {/* Header Section */}

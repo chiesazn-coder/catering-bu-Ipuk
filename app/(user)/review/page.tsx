@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
 interface Review {
   id: number;
@@ -41,7 +41,7 @@ export default function ReviewPage() {
 
   return (
     <main className="min-h-screen bg-white relative">
-      <Navbar />
+
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
         <header className="mb-12">

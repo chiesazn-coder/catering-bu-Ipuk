@@ -52,20 +52,6 @@ export default function Navbar() {
             );
           })}
 
-          {/* Ikon Portal Admin Desktop */}
-          <Link 
-            href="/login" 
-            className={`p-2 rounded-full transition-all ${
-              pathname.includes('/admin') || pathname === '/login' 
-              ? "bg-[#5B4E64] text-white" 
-              : "text-stone-900 hover:bg-stone-400/20"
-            }`}
-            title="Portal Admin"
-          >
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
-          </Link>
         </div>
 
         {/* Hamburger Icon (Mobile) */}

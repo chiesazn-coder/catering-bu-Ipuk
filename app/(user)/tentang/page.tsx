@@ -1,11 +1,11 @@
 import Image from 'next/image';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
 export default function TentangKami() {
   return (
     <main className="min-h-screen bg-white">
-      <Navbar />
+
       
       <section className="flex flex-col md:flex-row items-start gap-12 px-12 py-16 max-w-7xl mx-auto">
         
