@@ -1,8 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+
+
 
 export default function KelolaTentangKami() {
+
+  const router = useRouter();
+
   return (
     <div className="font-serif text-stone-900">
       {/* Judul Halaman */}
@@ -45,7 +51,10 @@ export default function KelolaTentangKami() {
                 Catering Bu Ipuk Nartoyo merupakan usaha kuliner yang berdiri sejak tahun 1996
               </td>
               <td className="p-6 text-center align-top pt-10">
-                <button className="bg-[#F2B661] text-white px-8 py-2 rounded-lg flex items-center justify-center gap-2 mx-auto font-bold shadow-sm hover:bg-[#e0a54d] transition-all">
+                <button 
+                  onClick={() => router.push("/admin/tentang/edit")}
+                  className="bg-[#F2B661] text-white px-8 py-2 rounded-lg flex items-center justify-center gap-2 mx-auto font-bold shadow-sm hover:bg-[#e0a54d] transition-all"
+                >
                   <span className="text-2xl">✏️</span> <span className="text-xl">Edit</span>
                 </button>
               </td>

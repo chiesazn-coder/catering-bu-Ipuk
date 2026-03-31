@@ -17,7 +17,6 @@ export async function middleware(request: NextRequest) {
           return request.cookies.get(name)?.value
         },
         set(name: string, value: string, options: CookieOptions) {
-          // Menambahkan cookie ke request dan response secara manual
           request.cookies.set({ name, value, ...options })
           response = NextResponse.next({
             request: {
@@ -27,7 +26,6 @@ export async function middleware(request: NextRequest) {
           response.cookies.set({ name, value, ...options })
         },
         remove(name: string, options: CookieOptions) {
-          // Menghapus cookie dengan mengosongkan nilainya
           request.cookies.set({ name, value: '', ...options })
           response = NextResponse.next({
             request: {
@@ -42,13 +40,16 @@ export async function middleware(request: NextRequest) {
 
   const { data: { user } } = await supabase.auth.getUser()
 
-  // Jika mencoba akses /admin tapi belum login, lempar ke /login
-  if (request.nextUrl.pathname.startsWith('/admin') && !user) {
+  const path = request.nextUrl.pathname
+
+  // 1. PROTEKSI ADMIN: Jika mencoba akses folder /admin tapi belum login
+  if (path.startsWith('/admin') && !user) {
     return NextResponse.redirect(new URL('/login', request.url))
   }
 
-  // Jika sudah login dan mencoba buka /login, lempar ke dashboard admin
-  if (request.nextUrl.pathname === '/login' && user) {
+  // 2. PROTEKSI AUTH: Jika sudah login tapi mencoba buka halaman /login atau /register
+  const authRoutes = ['/login', '/register']
+  if (authRoutes.includes(path) && user) {
     return NextResponse.redirect(new URL('/admin/dashboard', request.url))
   }
 
@@ -56,5 +57,6 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/admin/:path*', '/login'],
+  // Tambahkan '/register' ke dalam matcher agar middleware memantau halaman tersebut
+  matcher: ['/admin/:path*', '/login', '/register'],
 }
