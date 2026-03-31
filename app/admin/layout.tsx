@@ -88,36 +88,48 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   return (
     <div className="min-h-screen flex flex-col font-serif">
       {/* HEADER */}
-      <header className="bg-[#D9EAD3] px-6 py-3 flex justify-between items-center border-b border-stone-200">
+      <header className="bg-[#D9EAD3] px-6 py-3 flex justify-between items-center border-b border-stone-300">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 relative">
             <Image src="/logo.png" alt="Logo" fill className="object-contain" />
           </div>
           <span className="text-xl font-bold text-stone-800">Catering Bu Ipuk</span>
         </div>
-        <h1 className="text-2xl font-bold text-stone-800">Admin</h1>
+        
+        {/* TULISAN ADMIN SEBAGAI TOMBOL NAVIGASI */}
+        <Link 
+          href="/admin/kelola-akun" 
+          className="text-2xl font-bold text-stone-800 hover:text-stone-600 transition-colors cursor-pointer"
+        >
+          Admin
+        </Link>
       </header>
 
       <div className="flex flex-1">
         {/* SIDEBAR */}
-        <aside className="w-64 bg-[#576743] text-white flex flex-col justify-between">
+        <aside className="w-72 bg-[#576743] text-white flex flex-col justify-between">
           <div>
-            <div className="p-6 text-center border-b border-white/10">
-              <h2 className="text-xl font-bold tracking-widest uppercase">Admin</h2>
+            <div className="p-8 text-center border-b border-white/10">
+              <Link 
+                href="/admin/kelola-akun"
+                className="text-2xl font-bold tracking-[0.2em] uppercase hover:opacity-80 transition-opacity"
+              >
+                Admin
+              </Link>
             </div>
-            <nav className="mt-4">
+            <nav className="mt-6">
               {menuItems.map((item) => {
                 const isActive = pathname === item.href;
                 return (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`flex items-center gap-4 px-6 py-4 hover:bg-black/10 transition-all border-l-4 ${
-                      isActive ? "bg-black/20 border-white font-bold" : "border-transparent"
+                    className={`flex items-center gap-4 px-6 py-5 hover:bg-black/10 transition-all border-l-8 ${
+                      isActive ? "bg-black/20 border-white font-bold" : "border-transparent opacity-80"
                     }`}
                   >
-                    <span className="text-white">{item.icon}</span>
-                    <span className="text-lg">{item.name}</span>
+                    <span>{item.icon}</span>
+                    <span className="text-xl">{item.name}</span>
                   </Link>
                 );
               })}
@@ -126,37 +138,37 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           
           <button 
             onClick={handleLogout}
-            className="flex items-center gap-4 px-6 py-8 hover:bg-red-900/30 transition-colors mt-auto border-t border-white/10 group"
+            className="flex items-center gap-4 px-6 py-10 hover:bg-red-900/40 transition-colors mt-auto border-t border-white/10 group bg-[#4a5739]"
           >
-            <svg className="w-6 h-6 text-white group-hover:text-red-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-8 h-8 text-white group-hover:text-red-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
             </svg>
-            <span className="text-lg font-bold">Logout</span>
+            <span className="text-xl font-bold">Logout</span>
           </button>
         </aside>
 
         {/* CONTENT AREA */}
-        <main className="flex-1 bg-white">
-          <div className="p-8 max-w-6xl min-h-screen">
+        <main className="flex-1 bg-white flex flex-col">
+          <div className="p-10 flex-1 min-h-screen">
             {children}
           </div>
 
           {/* FOOTER */}
-          <footer className="bg-[#D9EAD3] p-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-stone-800 max-w-6xl mx-auto">
+          <footer className="bg-[#D9EAD3] py-16 px-10 border-t border-stone-300">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 text-stone-800 max-w-6xl mx-auto">
               <div>
-                <h3 className="text-2xl font-bold mb-6">Alamat :</h3>
-                <p className="text-xl leading-relaxed">
+                <h3 className="text-3xl font-bold mb-8">Alamat :</h3>
+                <p className="text-2xl leading-relaxed">
                   Perum APH B-23 Seturan Baru, Kledokan,<br />
                   Caturtunggal, Depok, Sleman, Yogyakarta
                 </p>
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-6">Hubungi Kami :</h3>
-                <p className="text-xl">Telp : 08274486304</p>
+                <h3 className="text-3xl font-bold mb-8">Hubungi Kami :</h3>
+                <p className="text-2xl font-bold italic">Telp : 08274486304</p>
               </div>
             </div>
-            <div className="mt-20 pt-8 border-t border-stone-400/30 text-center text-stone-600">
+            <div className="mt-24 pt-8 border-t border-stone-400 text-center text-stone-600 text-lg">
               © 2026 Catering Bu Ipuk Nartoyo. All rights reserved.
             </div>
           </footer>
