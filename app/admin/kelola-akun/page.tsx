@@ -77,6 +77,7 @@ export default function KelolaAkun() {
           </button>
           
           <button
+            onClick={() => router.push("/admin/kelola-akun/edit")}
             className="bg-[#F2B661] text-black px-12 py-3 rounded-lg text-2xl font-bold hover:bg-[#e0a54d] transition-all active:scale-95 shadow-md flex items-center gap-2"
           >
             ✏️ Edit

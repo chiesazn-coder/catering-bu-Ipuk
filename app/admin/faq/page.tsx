@@ -77,7 +77,7 @@ export default function KelolaFAQ() {
                 <td className="p-6 align-middle">
                   <div className="flex flex-row gap-4 items-center justify-center">
                     <button 
-                      onClick={() => setShowEditModal(true)}
+                      onClick={() => router.push("/admin/faq/edit")} 
                       className="bg-[#F4B400] text-white px-6 py-2 rounded-lg flex items-center justify-center gap-2 font-bold shadow-sm hover:bg-yellow-600 transition-colors"
                     >
                       <span className="text-xl">✏️</span> Edit
